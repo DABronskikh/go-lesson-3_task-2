@@ -43,3 +43,18 @@ func isMCC(mcc string, mccArr []string) bool {
 	}
 	return false
 }
+
+func TranslateMCC(code string) string {
+	mcc := map[string]string{
+		"5411": "Супермаркеты",
+		"5533": "Автоуслуги",
+		"5912": "Аптеки",
+	}
+
+	value, ok := mcc[code]
+	if ok {
+		return value
+	}
+
+	return "Категория не указана"
+}
